@@ -125,6 +125,8 @@
     display:inline-block;font-size:.72rem;font-weight:700;padding:.15rem .55rem;
     border-radius:999px;white-space:nowrap;
   }
+  .wl{display:inline-block;font-size:.75rem;font-weight:700;color:var(--blue);white-space:nowrap;margin-left:.3rem}
+  .wl:hover{color:var(--ink)}
   .tag.v{background:rgba(52,211,153,.15);color:var(--green)}
   .tag.a{background:rgba(251,191,36,.15);color:var(--yellow)}
   .tag.n{background:rgba(248,113,113,.15);color:var(--red)}
@@ -321,7 +323,7 @@
   <section id="rutas">
     <div class="kicker">Calendario de salidas</div>
     <h2>Rutas de preparación: de Jaén a Madrid</h2>
-    <p class="lead">Progresión pensada para nuestro grupo: empezamos en las sierras de casa, pasamos por Sierra Nevada (la mejor "escuela de altitud" de la península y a 1 h de Jaén) y usamos Guadarrama para los que están en Madrid. Todas tienen track en Wikiloc.</p>
+    <p class="lead">Progresión pensada para nuestro grupo: empezamos en las sierras de casa, pasamos por Sierra Nevada (la mejor "escuela de altitud" de la península y a 1 h de Jaén) y usamos Guadarrama para los que están en Madrid. Cada ruta lleva el enlace a su track de Wikiloc: descárgalo en el móvil antes de salir y síguelo offline.</p>
 
     <div class="tabla-wrap">
       <table>
@@ -329,17 +331,17 @@
           <tr><th>#</th><th>Ruta</th><th>Zona</th><th>Cima</th><th>Desnivel+</th><th>Duración</th><th>Cuándo</th><th>Nivel</th></tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td><b>Jabalcuz – Cerro Vientofrío</b></td><td>Jaén ciudad</td><td>~1.180 m</td><td>~550 m</td><td>3–4 h</td><td>Mes 1</td><td><span class="tag v">Iniciación</span></td></tr>
-          <tr><td>2</td><td><b>La Pandera</b> desde Los Villares</td><td>Sierra Sur (Jaén)</td><td>1.872 m</td><td>~800 m</td><td>5 h</td><td>Mes 2</td><td><span class="tag v">Iniciación</span></td></tr>
-          <tr><td>3</td><td><b>El Yelmo</b> desde Hornos</td><td>Sierra de Segura</td><td>1.809 m</td><td>~750 m</td><td>5 h</td><td>Mes 3</td><td><span class="tag v">Iniciación</span></td></tr>
-          <tr><td>4</td><td><b>Pico Mágina</b> (techo de Jaén)</td><td>Sierra Mágina</td><td>2.167 m</td><td>~950 m</td><td>6–7 h</td><td>Mes 4–5</td><td><span class="tag a">Media</span></td></tr>
-          <tr><td>5</td><td><b>La Sagra</b> desde Collado Sagra</td><td>Huéscar (Granada)</td><td>2.383 m</td><td>~850 m</td><td>5–6 h</td><td>Mes 5–6</td><td><span class="tag a">Media</span></td></tr>
-          <tr><td>6</td><td><b>Peñalara</b> desde Cotos</td><td>Guadarrama (Madrid)</td><td>2.428 m</td><td>~600 m</td><td>4–5 h</td><td>Mes 6 (grupo Madrid)</td><td><span class="tag a">Media</span></td></tr>
-          <tr><td>7</td><td><b>La Maliciosa</b> desde La Barranca</td><td>Guadarrama (Madrid)</td><td>2.227 m</td><td>~950 m</td><td>6 h</td><td>Mes 7 (grupo Madrid)</td><td><span class="tag a">Media</span></td></tr>
-          <tr><td>8</td><td><b>Peñalara o Veleta invernal</b> 🧗 con crampones tras el curso</td><td>Guadarrama / S. Nevada</td><td>2.428 / 3.396 m</td><td>600–900 m</td><td>5–7 h</td><td>Mes 8–9</td><td><span class="tag i">Invernal</span></td></tr>
-          <tr><td>9</td><td><b>Cuerda Larga</b> (Navacerrada→Morcuera)</td><td>Guadarrama (Madrid)</td><td>2.383 m</td><td>~1.100 m · 16 km</td><td>8–9 h</td><td>Mes 10</td><td><span class="tag n">Exigente</span></td></tr>
-          <tr><td>10</td><td><b>Mulhacén</b> desde Capileira (ensayo general)</td><td>Sierra Nevada</td><td>3.479 m</td><td>~1.300 m · 22 km</td><td>9–11 h</td><td>Mes 11</td><td><span class="tag n">Exigente</span></td></tr>
-          <tr><td style="background:rgba(249,115,22,.08)">🏁</td><td style="background:rgba(249,115,22,.08)"><b>ANETO</b> desde La Besurta / Renclusa</td><td style="background:rgba(249,115,22,.08)">Pirineo (Huesca)</td><td style="background:rgba(249,115,22,.08)"><b>3.404 m</b></td><td style="background:rgba(249,115,22,.08)">~1.400 m</td><td style="background:rgba(249,115,22,.08)">10–12 h</td><td style="background:rgba(249,115,22,.08)">Mes 12</td><td style="background:rgba(249,115,22,.08)"><span class="tag n">Alta montaña</span></td></tr>
+          <tr><td>1</td><td><b>Jabalcuz – Cerro Vientofrío</b> <a class="wl" href="https://es.wikiloc.com/rutas-senderismo/jaen-capital-subida-al-pico-de-jabalcuz-4817842" target="_blank" rel="noopener">track ↗</a></td><td>Jaén ciudad</td><td>~1.180 m</td><td>~550 m</td><td>3–4 h</td><td>Mes 1</td><td><span class="tag v">Iniciación</span></td></tr>
+          <tr><td>2</td><td><b>La Pandera</b> desde Los Villares <a class="wl" href="https://es.wikiloc.com/rutas-senderismo/los-villaresurb-la-pandera-alto-de-la-pandera-pena-del-altar-y-regreso-8118849" target="_blank" rel="noopener">track ↗</a></td><td>Sierra Sur (Jaén)</td><td>1.872 m</td><td>~800 m</td><td>5 h</td><td>Mes 2</td><td><span class="tag v">Iniciación</span></td></tr>
+          <tr><td>3</td><td><b>El Yelmo</b> desde Segura de la Sierra <a class="wl" href="https://www.wikiloc.com/hiking-trails/el-yelmo-segura-de-la-sierra-89158521" target="_blank" rel="noopener">track ↗</a></td><td>Sierra de Segura</td><td>1.809 m</td><td>~750 m</td><td>5 h</td><td>Mes 3</td><td><span class="tag v">Iniciación</span></td></tr>
+          <tr><td>4</td><td><b>Pico Mágina</b> (techo de Jaén) <a class="wl" href="https://www.wikiloc.com/hiking-trails/pico-magina-2-167m-y-refugio-miramundos-desde-el-cortijo-tosquilla-3569370" target="_blank" rel="noopener">track ↗</a></td><td>Sierra Mágina</td><td>2.167 m</td><td>~950 m</td><td>6–7 h</td><td>Mes 4–5</td><td><span class="tag a">Media</span></td></tr>
+          <tr><td>5</td><td><b>La Sagra</b> por el Collado de las Víboras <a class="wl" href="https://www.wikiloc.com/hiking-trails/subida-al-pico-de-la-sagra-collado-de-las-viboras-3633608" target="_blank" rel="noopener">track ↗</a></td><td>Huéscar (Granada)</td><td>2.383 m</td><td>~850 m</td><td>5–6 h</td><td>Mes 5–6</td><td><span class="tag a">Media</span></td></tr>
+          <tr><td>6</td><td><b>Peñalara</b> desde Cotos <a class="wl" href="https://www.wikiloc.com/hiking-trails/penalara-clasica-desde-puerto-de-cotos-2-428-m-sierra-guadarrama-ascenso-penalara-3950411" target="_blank" rel="noopener">track ↗</a></td><td>Guadarrama (Madrid)</td><td>2.428 m</td><td>~600 m</td><td>4–5 h</td><td>Mes 6 (grupo Madrid)</td><td><span class="tag a">Media</span></td></tr>
+          <tr><td>7</td><td><b>La Maliciosa</b> desde La Barranca <a class="wl" href="https://www.wikiloc.com/hiking-trails/la-maliciosa-2-227-m-desde-la-barranca-31998585" target="_blank" rel="noopener">track ↗</a></td><td>Guadarrama (Madrid)</td><td>2.227 m</td><td>~950 m</td><td>6 h</td><td>Mes 7 (grupo Madrid)</td><td><span class="tag a">Media</span></td></tr>
+          <tr><td>8</td><td><b>Peñalara o Veleta invernal</b> 🧗 con crampones tras el curso <a class="wl" href="https://www.wikiloc.com/hiking-trails/penalara-invernal-circular-puerto-de-cotos-24393060" target="_blank" rel="noopener">Peñalara ↗</a> <a class="wl" href="https://www.wikiloc.com/mountaineering-trails/veleta-desde-hoya-de-la-mora-3-396msnm-invernal-22784419" target="_blank" rel="noopener">Veleta ↗</a></td><td>Guadarrama / S. Nevada</td><td>2.428 / 3.396 m</td><td>600–900 m</td><td>5–7 h</td><td>Mes 8–9</td><td><span class="tag i">Invernal</span></td></tr>
+          <tr><td>9</td><td><b>Cuerda Larga</b> (Navacerrada→Morcuera) <a class="wl" href="https://www.wikiloc.com/hiking-trails/cuerda-larga-del-puerto-navacerrada-al-puerto-la-morcuera-sierra-de-guadarrama-4679054" target="_blank" rel="noopener">track ↗</a></td><td>Guadarrama (Madrid)</td><td>2.383 m</td><td>~1.100 m · 16 km</td><td>8–9 h</td><td>Mes 10</td><td><span class="tag n">Exigente</span></td></tr>
+          <tr><td>10</td><td><b>Mulhacén</b> desde Capileira (ensayo general) <a class="wl" href="https://www.wikiloc.com/hiking-trails/el-mulhacen-3-479-m-desde-capileira-refugio-poqueira-mulhacen-5566957" target="_blank" rel="noopener">track ↗</a></td><td>Sierra Nevada</td><td>3.479 m</td><td>~1.300 m · 22 km</td><td>9–11 h</td><td>Mes 11</td><td><span class="tag n">Exigente</span></td></tr>
+          <tr><td style="background:rgba(249,115,22,.08)">🏁</td><td style="background:rgba(249,115,22,.08)"><b>ANETO</b> desde La Besurta / Renclusa <a class="wl" href="https://www.wikiloc.com/mountaineering-trails/aneto-desde-la-besurta-pasando-por-la-renclusa-7642958" target="_blank" rel="noopener">track ↗</a></td><td style="background:rgba(249,115,22,.08)">Pirineo (Huesca)</td><td style="background:rgba(249,115,22,.08)"><b>3.404 m</b></td><td style="background:rgba(249,115,22,.08)">~1.400 m</td><td style="background:rgba(249,115,22,.08)">10–12 h</td><td style="background:rgba(249,115,22,.08)">Mes 12</td><td style="background:rgba(249,115,22,.08)"><span class="tag n">Alta montaña</span></td></tr>
         </tbody>
       </table>
     </div>
