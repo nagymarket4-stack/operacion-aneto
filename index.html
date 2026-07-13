@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Operación Aneto · De Jaén a los 3.404 m en 12 meses</title>
+<meta name="description" content="Plan de preparación de un año para subir al Aneto desde cero: entrenamiento, rutas progresivas entre Jaén y Madrid, material por niveles y seguridad. Sin gastar de más.">
+<style>
+  :root{
+    --bg:#0f172a;
+    --bg2:#1e293b;
+    --card:#1e293b;
+    --ink:#e2e8f0;
+    --muted:#94a3b8;
+    --accent:#f97316;
+    --accent2:#fb923c;
+    --green:#34d399;
+    --blue:#38bdf8;
+    --yellow:#fbbf24;
+    --red:#f87171;
+    --line:#334155;
+    --radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  /* Sin scroll-behavior:smooth — en visores embebidos las animaciones de scroll
+     se congelan y los enlaces del menú parecen no funcionar */
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.65;
+  }
+  a{color:var(--accent2);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(15,23,42,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1100px;margin:0 auto;padding:.7rem 1rem;
+    display:flex;align-items:center;gap:1rem;flex-wrap:wrap;
+  }
+  .nav-logo{font-weight:800;color:var(--ink);white-space:nowrap}
+  .nav-logo span{color:var(--accent)}
+  .nav-links{display:flex;gap:.2rem;flex-wrap:wrap}
+  .nav-links a{
+    color:var(--muted);font-size:.88rem;padding:.35rem .65rem;border-radius:8px;
+  }
+  .nav-links a:hover{color:var(--ink);background:var(--bg2);text-decoration:none}
+
+  /* ---------- HERO ---------- */
+  header{
+    position:relative;overflow:hidden;text-align:center;
+    padding:5rem 1rem 0;
+    background:linear-gradient(180deg,#0c1c3a 0%,#14304f 45%,#1d3a5f 70%,#0f172a 100%);
+  }
+  .hero-badge{
+    display:inline-block;background:rgba(249,115,22,.15);color:var(--accent2);
+    border:1px solid rgba(249,115,22,.4);border-radius:999px;
+    padding:.3rem 1rem;font-size:.85rem;font-weight:600;letter-spacing:.05em;
+  }
+  header h1{
+    font-size:clamp(2.2rem,6vw,3.8rem);font-weight:900;margin:.9rem 0 .4rem;
+    letter-spacing:-.02em;
+  }
+  header h1 em{font-style:normal;color:var(--accent)}
+  .hero-sub{color:#bcd0e5;max-width:620px;margin:0 auto;font-size:1.1rem}
+  .hero-stats{
+    display:flex;justify-content:center;gap:2.2rem;flex-wrap:wrap;margin:2rem auto 0;
+  }
+  .hero-stats div{text-align:center}
+  .hero-stats b{display:block;font-size:1.6rem;color:var(--accent2)}
+  .hero-stats small{color:var(--muted);font-size:.82rem;text-transform:uppercase;letter-spacing:.08em}
+  .mountains{display:block;width:100%;margin-top:2.5rem}
+
+  /* ---------- LAYOUT ---------- */
+  main{max-width:1100px;margin:0 auto;padding:0 1rem 4rem}
+  section{padding-top:4rem;scroll-margin-top:60px}
+  .kicker{color:var(--accent);font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.12em}
+  h2{font-size:clamp(1.6rem,4vw,2.2rem);margin:.3rem 0 1rem;letter-spacing:-.01em}
+  h3{font-size:1.15rem;margin-bottom:.5rem}
+  .lead{color:var(--muted);max-width:760px;margin-bottom:1.8rem}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:1.4rem;
+  }
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1rem}
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+
+  .callout{
+    border-left:4px solid var(--accent);background:rgba(249,115,22,.08);
+    border-radius:0 var(--radius) var(--radius) 0;padding:1rem 1.2rem;margin:1.2rem 0;
+  }
+  .callout.blue{border-color:var(--blue);background:rgba(56,189,248,.08)}
+  .callout.red{border-color:var(--red);background:rgba(248,113,113,.08)}
+  .callout.green{border-color:var(--green);background:rgba(52,211,153,.08)}
+  .callout b:first-child{display:block;margin-bottom:.2rem}
+
+  /* ---------- TIMELINE FASES ---------- */
+  .fases{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .fase{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.3rem;border-top:4px solid var(--accent)}
+  .fase:nth-child(1){border-top-color:var(--green)}
+  .fase:nth-child(2){border-top-color:var(--blue)}
+  .fase:nth-child(3){border-top-color:var(--yellow)}
+  .fase:nth-child(4){border-top-color:var(--accent)}
+  .fase .mes{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+  .fase h3{margin:.3rem 0 .5rem}
+  .fase ul{padding-left:1.1rem;color:var(--muted);font-size:.93rem}
+  .fase li{margin:.35rem 0}
+  .fase .meta{margin-top:.8rem;font-size:.85rem;color:var(--ink);background:var(--bg);border-radius:8px;padding:.5rem .7rem}
+
+  /* ---------- TABLAS ---------- */
+  .tabla-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius)}
+  table{width:100%;border-collapse:collapse;font-size:.92rem;min-width:640px}
+  th{
+    background:var(--bg2);text-align:left;padding:.7rem .9rem;font-size:.78rem;
+    text-transform:uppercase;letter-spacing:.08em;color:var(--muted);
+    border-bottom:1px solid var(--line);
+  }
+  td{padding:.7rem .9rem;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  tr:hover td{background:rgba(51,65,85,.3)}
+  .tag{
+    display:inline-block;font-size:.72rem;font-weight:700;padding:.15rem .55rem;
+    border-radius:999px;white-space:nowrap;
+  }
+  .tag.v{background:rgba(52,211,153,.15);color:var(--green)}
+  .tag.a{background:rgba(251,191,36,.15);color:var(--yellow)}
+  .tag.n{background:rgba(248,113,113,.15);color:var(--red)}
+  .tag.i{background:rgba(56,189,248,.15);color:var(--blue)}
+
+  /* ---------- CHECKLIST MATERIAL ---------- */
+  .nivel{margin-bottom:1.6rem}
+  .nivel-head{
+    display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
+    flex-wrap:wrap;margin-bottom:.7rem;
+  }
+  .nivel-head .precio{color:var(--accent2);font-weight:800;font-size:1.05rem;white-space:nowrap}
+  .check-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.5rem}
+  .check-item{
+    display:flex;gap:.7rem;align-items:flex-start;background:var(--card);
+    border:1px solid var(--line);border-radius:10px;padding:.7rem .85rem;cursor:pointer;
+    transition:border-color .15s;
+  }
+  .check-item:hover{border-color:var(--accent)}
+  .check-item input{margin-top:.3rem;accent-color:var(--accent);width:1.05rem;height:1.05rem;flex-shrink:0;cursor:pointer}
+  .check-item.done{opacity:.55}
+  .check-item.done .ci-name{text-decoration:line-through}
+  .ci-name{font-weight:600;font-size:.93rem}
+  .ci-note{color:var(--muted);font-size:.82rem}
+  .progreso{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:1rem 1.2rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;
+  }
+  .barra{flex:1;min-width:180px;height:10px;background:var(--bg);border-radius:999px;overflow:hidden}
+  .barra > div{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--accent));transition:width .3s}
+  #prog-txt{font-weight:700;white-space:nowrap}
+
+  /* ---------- SEMANA TIPO ---------- */
+  .semana{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.6rem}
+  .dia{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.8rem;text-align:center}
+  .dia b{display:block;color:var(--accent2);font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem}
+  .dia span{font-size:.86rem;color:var(--muted)}
+
+  footer{
+    border-top:1px solid var(--line);text-align:center;color:var(--muted);
+    padding:2.5rem 1rem;font-size:.88rem;
+  }
+  footer b{color:var(--accent2)}
+  @media (max-width:640px){
+    .nav-links{font-size:.8rem}
+    .hero-stats{gap:1.2rem}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">⛰️ Operación <span>Aneto</span></div>
+    <div class="nav-links">
+      <a href="#plan">El plan</a>
+      <a href="#entreno">Entrenamiento</a>
+      <a href="#rutas">Rutas</a>
+      <a href="#material">Material</a>
+      <a href="#seguridad">Seguridad</a>
+      <a href="#eldia">El gran día</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <span class="hero-badge">DE JAÉN A LA CIMA DEL PIRINEO · PLAN DE 12 MESES</span>
+  <h1>Operación <em>Aneto</em><br>3.404 m</h1>
+  <p class="hero-sub">Entre nosotros y la cima del Aneto hay <b style="color:var(--accent2)">10.150 metros de desnivel acumulado</b>: la suma de todas las rutas que subiremos hasta llegar. Más altura que el Everest desde el nivel del mar. Y los vamos a ganar metro a metro.</p>
+  <div class="hero-stats">
+    <div><b>3.404 m</b><small>altitud Aneto</small></div>
+    <div><b>12</b><small>meses de plan</small></div>
+    <div><b>~10</b><small>rutas de preparación</small></div>
+    <div><b>&lt;400 €</b><small>material desde cero</small></div>
+  </div>
+  <svg class="mountains" viewBox="0 0 1440 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 220 L180 90 L300 160 L460 40 L620 170 L760 20 L900 150 L1060 60 L1220 140 L1350 80 L1440 130 L1440 220 Z" fill="#1e293b"/>
+    <path d="M0 220 L120 150 L280 190 L420 110 L560 200 L720 80 L880 190 L1040 130 L1200 195 L1440 100 L1440 220 Z" fill="#0f172a"/>
+    <path d="M745 35 L760 20 L775 35 L768 35 L760 28 L752 35 Z" fill="#e2e8f0"/>
+  </svg>
+</header>
+
+<main>
+
+  <!-- ============ EL PLAN ============ -->
+  <section id="plan">
+    <div class="kicker">La hoja de ruta</div>
+    <h2>El plan: 4 fases hasta la cima</h2>
+    <p class="lead">El Aneto no es una ruta técnica extrema, pero sí exigente: <b>+1.400 m de desnivel, 10–12 h de actividad, glaciar con crampones y el famoso Paso de Mahoma</b> (una cresta aérea de unos 40 m antes de la cima). Nadie sube eso "de golpe": se construye. La regla de oro es la <b>progresión</b> — cada mes un poco más lejos, más alto y con más peso a la espalda.</p>
+
+    <div class="fases">
+      <div class="fase">
+        <div class="mes">Meses 1–3 · Verano/Otoño</div>
+        <h3>🌱 Fase 1 · Base</h3>
+        <ul>
+          <li>Crear el hábito: 3–4 sesiones/semana de cardio suave (andar rápido, correr, bici).</li>
+          <li>1 ruta al mes por las sierras de Jaén (500–800 m de desnivel).</li>
+          <li>Aprender a leer un track de Wikiloc y a usar el móvil como GPS.</li>
+          <li>Comprar solo el material de Nivel 0.</li>
+        </ul>
+        <div class="meta">🎯 Objetivo: subir La Pandera sin sufrir y disfrutando.</div>
+      </div>
+      <div class="fase">
+        <div class="mes">Meses 4–6 · Otoño/Invierno</div>
+        <h3>💪 Fase 2 · Resistencia</h3>
+        <ul>
+          <li>Añadir 2 días de fuerza (piernas y core, en casa vale).</li>
+          <li>Rutas de +1.000 m de desnivel con mochila de 6–8 kg.</li>
+          <li>Primeras salidas fuera de Jaén: La Sagra, Sierra Nevada baja.</li>
+          <li>Federarse (FADMES) → seguro de rescate + descuento en refugios.</li>
+        </ul>
+        <div class="meta">🎯 Objetivo: Pico Mágina (2.167 m, techo de Jaén) con soltura.</div>
+      </div>
+      <div class="fase">
+        <div class="mes">Meses 7–9 · Invierno/Primavera</div>
+        <h3>❄️ Fase 3 · Técnica invernal</h3>
+        <ul>
+          <li><b>Curso de iniciación al alpinismo</b> (imprescindible): crampones, piolet, autodetención. Los clubes lo ofrecen barato.</li>
+          <li>Salidas con nieve en Sierra Nevada o Guadarrama (Peñalara).</li>
+          <li>Primera noche en refugio de montaña.</li>
+          <li>Comprar/alquilar material de Nivel 2 y practicar con él.</li>
+        </ul>
+        <div class="meta">🎯 Objetivo: Veleta (3.396 m) con crampones. Primer tresmil.</div>
+      </div>
+      <div class="fase">
+        <div class="mes">Meses 10–12 · Primavera/Verano</div>
+        <h3>🏔️ Fase 4 · Ensayo general</h3>
+        <ul>
+          <li>Tiradas largas de 8–10 h y fines de semana dobles (dos rutas seguidas).</li>
+          <li>Cuerda Larga en Guadarrama: cresta larga, parecida en esfuerzo.</li>
+          <li><b>Mulhacén (3.479 m)</b>: más alto que el Aneto, sin glaciar. Si lo subimos bien, estamos listos.</li>
+          <li>Reservar refugio de La Renclusa con 2–3 meses de antelación.</li>
+        </ul>
+        <div class="meta">🎯 Objetivo: ANETO · finales de junio–julio (glaciar en condiciones).</div>
+      </div>
+    </div>
+
+    <div class="callout blue">
+      <b>💡 ¿Por qué un año entero?</b>
+      Porque necesitamos pasar un invierno aprendiendo a usar crampones y piolet con calma, y porque las articulaciones (rodillas, tobillos) tardan meses en adaptarse a los descensos largos. El descenso del Aneto castiga más que la subida.
+    </div>
+  </section>
+
+  <!-- ============ ENTRENAMIENTO ============ -->
+  <section id="entreno">
+    <div class="kicker">Preparación física</div>
+    <h2>Entrenamiento semanal</h2>
+    <p class="lead">El alpinismo es 80 % resistencia aeróbica y piernas fuertes. No hace falta gimnasio de pago: con caminar rápido, correr suave, escaleras y ejercicios con el peso del cuerpo sobra. Lo importante es la <b>constancia</b>: mejor 4 sesiones suaves que 1 paliza.</p>
+
+    <h3 style="margin-top:1.5rem">Semana tipo (fases 2–4)</h3>
+    <div class="semana" style="margin-top:.7rem">
+      <div class="dia"><b>Lunes</b><span>Descanso o paseo suave 30–40'</span></div>
+      <div class="dia"><b>Martes</b><span>Cardio 45–60' (correr suave, bici o caminata rápida)</span></div>
+      <div class="dia"><b>Miércoles</b><span>Fuerza 40' (ver rutina abajo)</span></div>
+      <div class="dia"><b>Jueves</b><span>Cardio con cuestas o escaleras 45'</span></div>
+      <div class="dia"><b>Viernes</b><span>Fuerza 40' + core</span></div>
+      <div class="dia"><b>Sábado</b><span>🥾 RUTA larga (la sesión clave de la semana)</span></div>
+      <div class="dia"><b>Domingo</b><span>Descanso activo: estiramientos, paseo</span></div>
+    </div>
+
+    <div class="grid2" style="margin-top:1.5rem">
+      <div class="card">
+        <h3>🦵 Rutina de fuerza (sin gimnasio, 40 min)</h3>
+        <ul style="padding-left:1.1rem;color:var(--muted)">
+          <li><b>Sentadillas</b> — 4×15 (con mochila cargada cuando sea fácil)</li>
+          <li><b>Zancadas</b> caminando — 3×12 por pierna</li>
+          <li><b>Step-up</b> a un banco o escalón alto — 3×10 por pierna</li>
+          <li><b>Elevación de gemelos</b> — 3×20 (clave para bajadas)</li>
+          <li><b>Plancha</b> — 3×45" + plancha lateral 2×30" por lado</li>
+          <li><b>Puente de glúteo</b> — 3×15</li>
+        </ul>
+        <p style="color:var(--muted);font-size:.88rem;margin-top:.6rem">Progresión: cuando 3 series salgan fáciles, añade peso en la mochila (garrafas de agua) antes que añadir repeticiones.</p>
+      </div>
+      <div class="card">
+        <h3>🫁 Cardio que de verdad sirve</h3>
+        <ul style="padding-left:1.1rem;color:var(--muted)">
+          <li><b>Caminar rápido con desnivel</b> es el rey. En Jaén: subidas al castillo de Santa Catalina o Jabalcuz después de trabajar.</li>
+          <li><b>Escaleras con mochila</b>: 20–30' seguidos en un bloque alto o gradas. Simula perfectamente la montaña.</li>
+          <li><b>Correr suave</b> (poder hablar mientras corres) 2 veces/semana si las rodillas lo permiten.</li>
+          <li>Test de forma: si subes <b>500 m de desnivel en 1 h</b> con mochila de 6 kg sin reventar, vas bien para el Aneto.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout green">
+      <b>✅ La regla del 10 %</b>
+      No aumentes más de un 10 % por semana ni el desnivel ni el peso de la mochila. Las lesiones por hacer demasiado pronto son lo que más planes de montaña se carga. Y entrenad también las <b>bajadas</b>: bajar despacio y controlado fortalece justo lo que el Aneto exige.
+    </div>
+  </section>
+
+  <!-- ============ RUTAS ============ -->
+  <section id="rutas">
+    <div class="kicker">Calendario de salidas</div>
+    <h2>Rutas de preparación: de Jaén a Madrid</h2>
+    <p class="lead">Progresión pensada para nuestro grupo: empezamos en las sierras de casa, pasamos por Sierra Nevada (la mejor "escuela de altitud" de la península y a 1 h de Jaén) y usamos Guadarrama para los que están en Madrid. Todas tienen track en Wikiloc.</p>
+
+    <div class="tabla-wrap">
+      <table>
+        <thead>
+          <tr><th>#</th><th>Ruta</th><th>Zona</th><th>Cima</th><th>Desnivel+</th><th>Duración</th><th>Cuándo</th><th>Nivel</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td><b>Jabalcuz – Cerro Vientofrío</b></td><td>Jaén ciudad</td><td>~1.180 m</td><td>~550 m</td><td>3–4 h</td><td>Mes 1</td><td><span class="tag v">Iniciación</span></td></tr>
+          <tr><td>2</td><td><b>La Pandera</b> desde Los Villares</td><td>Sierra Sur (Jaén)</td><td>1.872 m</td><td>~800 m</td><td>5 h</td><td>Mes 2</td><td><span class="tag v">Iniciación</span></td></tr>
+          <tr><td>3</td><td><b>El Yelmo</b> desde Hornos</td><td>Sierra de Segura</td><td>1.809 m</td><td>~750 m</td><td>5 h</td><td>Mes 3</td><td><span class="tag v">Iniciación</span></td></tr>
+          <tr><td>4</td><td><b>Pico Mágina</b> (techo de Jaén)</td><td>Sierra Mágina</td><td>2.167 m</td><td>~950 m</td><td>6–7 h</td><td>Mes 4–5</td><td><span class="tag a">Media</span></td></tr>
+          <tr><td>5</td><td><b>La Sagra</b> desde Collado Sagra</td><td>Huéscar (Granada)</td><td>2.383 m</td><td>~850 m</td><td>5–6 h</td><td>Mes 5–6</td><td><span class="tag a">Media</span></td></tr>
+          <tr><td>6</td><td><b>Peñalara</b> desde Cotos</td><td>Guadarrama (Madrid)</td><td>2.428 m</td><td>~600 m</td><td>4–5 h</td><td>Mes 6 (grupo Madrid)</td><td><span class="tag a">Media</span></td></tr>
+          <tr><td>7</td><td><b>La Maliciosa</b> desde La Barranca</td><td>Guadarrama (Madrid)</td><td>2.227 m</td><td>~950 m</td><td>6 h</td><td>Mes 7 (grupo Madrid)</td><td><span class="tag a">Media</span></td></tr>
+          <tr><td>8</td><td><b>Peñalara o Veleta invernal</b> 🧗 con crampones tras el curso</td><td>Guadarrama / S. Nevada</td><td>2.428 / 3.396 m</td><td>600–900 m</td><td>5–7 h</td><td>Mes 8–9</td><td><span class="tag i">Invernal</span></td></tr>
+          <tr><td>9</td><td><b>Cuerda Larga</b> (Navacerrada→Morcuera)</td><td>Guadarrama (Madrid)</td><td>2.383 m</td><td>~1.100 m · 16 km</td><td>8–9 h</td><td>Mes 10</td><td><span class="tag n">Exigente</span></td></tr>
+          <tr><td>10</td><td><b>Mulhacén</b> desde Capileira (ensayo general)</td><td>Sierra Nevada</td><td>3.479 m</td><td>~1.300 m · 22 km</td><td>9–11 h</td><td>Mes 11</td><td><span class="tag n">Exigente</span></td></tr>
+          <tr><td style="background:rgba(249,115,22,.08)">🏁</td><td style="background:rgba(249,115,22,.08)"><b>ANETO</b> desde La Besurta / Renclusa</td><td style="background:rgba(249,115,22,.08)">Pirineo (Huesca)</td><td style="background:rgba(249,115,22,.08)"><b>3.404 m</b></td><td style="background:rgba(249,115,22,.08)">~1.400 m</td><td style="background:rgba(249,115,22,.08)">10–12 h</td><td style="background:rgba(249,115,22,.08)">Mes 12</td><td style="background:rgba(249,115,22,.08)"><span class="tag n">Alta montaña</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid3" style="margin-top:1.5rem">
+      <div class="card">
+        <h3>🚗 Logística barata</h3>
+        <p style="color:var(--muted);font-size:.92rem">Coche compartido siempre (gasolina entre 4–5 sale a nada). Sierra Nevada está a ~1 h de Jaén: es nuestro campo de entrenamiento de altitud gratis. Para Guadarrama, los de Madrid tienen Cercanías hasta Cotos por unos pocos euros.</p>
+      </div>
+      <div class="card">
+        <h3>📱 Apps gratuitas</h3>
+        <p style="color:var(--muted);font-size:.92rem"><b>Wikiloc</b> (tracks de todas estas rutas), <b>AEMET</b> (predicción de montaña oficial), <b>Windy</b> (viento y nubes), <b>OsmAnd u Organic Maps</b> (mapas offline). Descarga siempre el mapa y el track ANTES de salir: arriba no hay cobertura.</p>
+      </div>
+      <div class="card">
+        <h3>🗓️ Regla del grupo</h3>
+        <p style="color:var(--muted);font-size:.92rem">Mínimo <b>una ruta al mes todos juntos</b> aunque vivamos en ciudades distintas. Las de en medio, cada uno con su grupo local. La montaña se entrena en la montaña: la constancia del sábado vale más que cualquier gimnasio.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MATERIAL ============ -->
+  <section id="material">
+    <div class="kicker">Equipo sin arruinarse</div>
+    <h2>Material: del nivel 0 al Aneto</h2>
+    <p class="lead">Error clásico de novato: gastarse 800 € el primer mes. No. Se compra <b>por niveles, cuando la progresión lo pide</b>. Precios orientativos de gama básica (Decathlon o similar) — y lo técnico se puede <b>alquilar o comprar de segunda mano</b> (Wallapop está lleno de crampones usados dos veces). Marca lo que ya tengas: la lista se guarda en tu navegador.</p>
+
+    <div class="progreso">
+      <span id="prog-txt">0 / 24 conseguidos</span>
+      <div class="barra"><div id="prog-bar"></div></div>
+      <span style="color:var(--muted);font-size:.85rem">✔️ se guarda automáticamente en este dispositivo</span>
+    </div>
+
+    <div class="nivel">
+      <div class="nivel-head">
+        <h3>🟢 Nivel 0 · Para empezar YA (meses 1–3)</h3>
+        <span class="precio">~120–170 €</span>
+      </div>
+      <div class="check-grid">
+        <label class="check-item" data-id="nivel0-0"><input type="checkbox"><span><span class="ci-name">Botas de trekking (caña media)</span><br><span class="ci-note">60–75 € · la compra más importante: probarlas por la tarde con calcetín de montaña</span></span></label>
+        <label class="check-item" data-id="nivel0-1"><input type="checkbox"><span><span class="ci-name">Mochila 20–30 L</span><br><span class="ci-note">20–35 € · con correa de pecho y cintura</span></span></label>
+        <label class="check-item" data-id="nivel0-2"><input type="checkbox"><span><span class="ci-name">Camiseta técnica (no algodón)</span><br><span class="ci-note">5–10 € · el algodón mojado enfría; valen las del running</span></span></label>
+        <label class="check-item" data-id="nivel0-3"><input type="checkbox"><span><span class="ci-name">Forro polar</span><br><span class="ci-note">10–15 € · segunda capa básica</span></span></label>
+        <label class="check-item" data-id="nivel0-4"><input type="checkbox"><span><span class="ci-name">Chubasquero / cortavientos</span><br><span class="ci-note">15–25 € · de momento vale uno sencillo</span></span></label>
+        <label class="check-item" data-id="nivel0-5"><input type="checkbox"><span><span class="ci-name">Pantalón de trekking o mallas</span><br><span class="ci-note">15–20 € · nada de vaqueros</span></span></label>
+        <label class="check-item" data-id="nivel0-6"><input type="checkbox"><span><span class="ci-name">Calcetines de senderismo (2 pares)</span><br><span class="ci-note">8–12 € · evitan ampollas más que ninguna crema</span></span></label>
+        <label class="check-item" data-id="nivel0-7"><input type="checkbox"><span><span class="ci-name">Gorra + gafas de sol + crema solar</span><br><span class="ci-note">ya lo tienes en casa casi seguro</span></span></label>
+        <label class="check-item" data-id="nivel0-8"><input type="checkbox"><span><span class="ci-name">Agua 1,5–2 L + comida de ruta</span><br><span class="ci-note">botellas recicladas valen; frutos secos, fruta, bocadillo</span></span></label>
+        <label class="check-item" data-id="nivel0-9"><input type="checkbox"><span><span class="ci-name">Botiquín mini + manta térmica</span><br><span class="ci-note">10 € · tiritas, compeed, ibuprofeno, venda</span></span></label>
+        <label class="check-item" data-id="nivel0-10"><input type="checkbox"><span><span class="ci-name">Frontal (linterna de cabeza)</span><br><span class="ci-note">10–15 € · SIEMPRE en la mochila aunque sea ruta corta</span></span></label>
+        <label class="check-item" data-id="nivel0-11"><input type="checkbox"><span><span class="ci-name">Móvil con Wikiloc + mapa offline</span><br><span class="ci-note">gratis · y batería externa pequeña</span></span></label>
+      </div>
+    </div>
+
+    <div class="nivel">
+      <div class="nivel-head">
+        <h3>🔵 Nivel 1 · Media montaña y frío (meses 4–8)</h3>
+        <span class="precio">~130–200 €</span>
+      </div>
+      <div class="check-grid">
+        <label class="check-item" data-id="nivel1-0"><input type="checkbox"><span><span class="ci-name">Chaqueta impermeable con membrana</span><br><span class="ci-note">40–70 € · tipo Quechua MH500; la capa 3 seria</span></span></label>
+        <label class="check-item" data-id="nivel1-1"><input type="checkbox"><span><span class="ci-name">Bastones de trekking (par)</span><br><span class="ci-note">20–35 € · salvan rodillas en bajadas largas; también de 2ª mano</span></span></label>
+        <label class="check-item" data-id="nivel1-2"><input type="checkbox"><span><span class="ci-name">Guantes finos + guantes de abrigo</span><br><span class="ci-note">15–25 € · sistema doble para invierno</span></span></label>
+        <label class="check-item" data-id="nivel1-3"><input type="checkbox"><span><span class="ci-name">Gorro y braga de cuello (buff)</span><br><span class="ci-note">8–12 €</span></span></label>
+        <label class="check-item" data-id="nivel1-4"><input type="checkbox"><span><span class="ci-name">Camiseta térmica (primera capa)</span><br><span class="ci-note">10–15 € · para salidas frías</span></span></label>
+        <label class="check-item" data-id="nivel1-5"><input type="checkbox"><span><span class="ci-name">Plumas o chaqueta acolchada ligera</span><br><span class="ci-note">30–50 € · para paradas y cimas; 2ª mano abunda</span></span></label>
+        <label class="check-item" data-id="nivel1-6"><input type="checkbox"><span><span class="ci-name">Polainas</span><br><span class="ci-note">10–15 € · para nieve y pedreras</span></span></label>
+        <label class="check-item" data-id="nivel1-7"><input type="checkbox"><span><span class="ci-name">Gafas de sol categoría 4</span><br><span class="ci-note">15–30 € · en nieve las cat. 3 se quedan cortas</span></span></label>
+      </div>
+    </div>
+
+    <div class="nivel">
+      <div class="nivel-head">
+        <h3>🟠 Nivel 2 · Alta montaña / Aneto (meses 7–12)</h3>
+        <span class="precio">~100–250 € (menos si alquilas)</span>
+      </div>
+      <div class="check-grid">
+        <label class="check-item" data-id="nivel2-0"><input type="checkbox"><span><span class="ci-name">Botas cramponables (semirrígidas)</span><br><span class="ci-note">90–150 € · imprescindibles para el glaciar; comprarlas en el mes 7 y domarlas</span></span></label>
+        <label class="check-item" data-id="nivel2-1"><input type="checkbox"><span><span class="ci-name">Crampones semiautomáticos</span><br><span class="ci-note">ALQUILER 10–15 €/día en Benasque · comprar (60–90 €) solo si repetiremos invernales</span></span></label>
+        <label class="check-item" data-id="nivel2-2"><input type="checkbox"><span><span class="ci-name">Piolet clásico</span><br><span class="ci-note">ALQUILER con los crampones · comprar 40–60 € · practicar autodetención en el curso</span></span></label>
+        <label class="check-item" data-id="nivel2-3"><input type="checkbox"><span><span class="ci-name">Casco de alpinismo</span><br><span class="ci-note">35–50 € · para el glaciar y el Paso de Mahoma; de 2ª mano NO (historial desconocido)</span></span></label>
+      </div>
+    </div>
+
+    <div class="callout">
+      <b>💶 Trucos para gastar poco</b>
+      <ul style="padding-left:1.1rem;margin-top:.3rem">
+        <li><b>Crampones y piolet se alquilan en Benasque</b> (~10–15 €/día el pack). Si solo los vas a usar en el Aneto y un par de prácticas, alquilar gana. Cómpralos solo si el gusanillo invernal engancha.</li>
+        <li><b>Segunda mano</b>: piolet, crampones, bastones y mochilas apenas se desgastan — Wallapop y los tablones de los clubes de montaña. Las <b>botas NO</b>: esas siempre nuevas y probadas muchos km antes del gran día.</li>
+        <li><b>Federarse compensa</b>: la licencia FEDME/FADMES (~80–120 €/año según cobertura) incluye seguro de rescate y accidentes, descuento en refugios y cursos de club a precio de socio. Un rescate sin seguro puede costar miles de euros.</li>
+        <li>Lo que ya tienes vale: mallas o pantalón deportivo, camisetas técnicas del running, forro polar de casa. La "regla de las 3 capas" no exige marcas caras.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ SEGURIDAD ============ -->
+  <section id="seguridad">
+    <div class="kicker">Lo más importante</div>
+    <h2>Seguridad: la cima es opcional, volver no</h2>
+    <p class="lead">La mayoría de sustos en montaña son evitables y siguen el mismo patrón: mala previsión meteo, salir tarde, sobrestimar fuerzas y no querer darse la vuelta. Estas son nuestras normas de grupo, innegociables.</p>
+
+    <div class="grid2">
+      <div class="card">
+        <h3>⛈️ Meteo y horarios</h3>
+        <ul style="padding-left:1.1rem;color:var(--muted);font-size:.93rem">
+          <li>Consultar <b>AEMET montaña</b> 3 días antes y la víspera. Si hay aviso, se aplaza. La montaña no se mueve de ahí.</li>
+          <li>En Pirineos en verano las <b>tormentas estallan a mediodía</b>: al Aneto se sale a las 4:00–5:00 para estar bajando a las 13:00.</li>
+          <li>Hora límite de cima pactada de antemano: si no hemos llegado, media vuelta. Sin debate.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🧭 Protocolo del grupo</h3>
+        <ul style="padding-left:1.1rem;color:var(--muted);font-size:.93rem">
+          <li>Nunca solos; el ritmo lo marca <b>el más lento</b> y el grupo no se estira.</li>
+          <li>Dejar dicho a alguien de confianza: ruta, coche, hora prevista de vuelta.</li>
+          <li>Track descargado offline + batería externa + móvil con modo avión.</li>
+          <li>112 funciona sin cobertura de tu operador. Aprende a dar coordenadas.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🥤 Comer, beber, altitud</h3>
+        <ul style="padding-left:1.1rem;color:var(--muted);font-size:.93rem">
+          <li>2–3 L de agua en rutas largas; comer algo <b>cada hora</b> aunque no apetezca (frutos secos, dátiles, bocadillo, geles caseros = pan con miel).</li>
+          <li>Por encima de 3.000 m puede aparecer dolor de cabeza y náusea (mal de altura leve). Se gestiona subiendo despacio e hidratando. Si empeora: bajar.</li>
+          <li>Las noches previas en Benasque/Renclusa (1.900 m) ayudan a aclimatar.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🎓 Formación</h3>
+        <ul style="padding-left:1.1rem;color:var(--muted);font-size:.93rem">
+          <li><b>Curso de iniciación al alpinismo invernal</b> en el mes 7–8: no es opcional. Crampones sin técnica = resbalón garantizado.</li>
+          <li>Apuntarse a un <b>club de montaña de Jaén</b>: salidas guiadas baratas, gente experta y material prestado a veces.</li>
+          <li>Plan B legítimo: contratar <b>guía para el día del Aneto</b> (~60–90 €/persona en grupo). Cero vergüenza: los guías existen para esto.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout red">
+      <b>🔴 Las 4 señales de dar media vuelta</b>
+      1) Nubes de desarrollo vertical creciendo antes de mediodía · 2) Alguien del grupo agotado o con síntomas de mal de altura · 3) Llegamos tarde a la hora límite pactada · 4) El terreno nos da más miedo del que sabemos gestionar. <b>El Aneto seguirá ahí el año que viene. Nosotros también tenemos que seguir.</b>
+    </div>
+  </section>
+
+  <!-- ============ EL GRAN DÍA ============ -->
+  <section id="eldia">
+    <div class="kicker">Mes 12</div>
+    <h2>El gran día: así se sube el Aneto</h2>
+    <p class="lead">Ruta normal desde <b>La Besurta</b> (valle de Benasque, Huesca), la vía clásica y la adecuada para nuestro nivel. Mejor época: <b>finales de junio a mediados de julio</b> — queda nieve/glaciar en condiciones y los días son larguísimos.</p>
+
+    <div class="grid2">
+      <div class="card">
+        <h3>📋 Itinerario recomendado (2 días)</h3>
+        <ul style="padding-left:1.1rem;color:var(--muted);font-size:.93rem">
+          <li><b>Día 0</b>: viaje Jaén/Madrid → Benasque (~7 h / ~5 h). Bus lanzadera a La Besurta y subida tranquila al <b>refugio de La Renclusa</b> (2.140 m, 45 min). Cena, repaso de material, dormir pronto. ⚠️ Reservar refugio con 2–3 meses de antelación.</li>
+          <li><b>Día 1 · 4:30</b> — desayuno y salida con frontales.</li>
+          <li><b>7:00–8:00</b> — Portillón Superior (2.870 m): se cruza al glaciar. Crampones, piolet y casco puestos.</li>
+          <li><b>8:00–10:30</b> — travesía del glaciar del Aneto, pendiente moderada y constante hasta el collado de Coronas.</li>
+          <li><b>10:30–11:00</b> — <b>Paso de Mahoma</b>: ~40 m de cresta de bloques (trepada fácil pero aérea, grado II). Con calma, de uno en uno, manos y pies. ¡CIMA! 🎉</li>
+          <li><b>11:30</b> — empezar a bajar sin entretenerse. La Besurta hacia las 16:00–17:00.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom:1rem">
+          <h3>💰 Presupuesto del finde (por persona)</h3>
+          <ul style="padding-left:1.1rem;color:var(--muted);font-size:.93rem">
+            <li>Gasolina + peajes compartidos: <b>~35–45 €</b></li>
+            <li>Refugio Renclusa media pensión: <b>~50–60 €</b> (menos federados)</li>
+            <li>Bus La Besurta ida/vuelta: <b>~10 €</b></li>
+            <li>Alquiler crampones+piolet en Benasque: <b>~15–25 €</b></li>
+            <li>Comida de ruta: <b>~15 €</b></li>
+            <li style="margin-top:.3rem"><b>Total: ~130–160 €</b> · con guía: +60–90 €</li>
+          </ul>
+        </div>
+        <div class="callout blue" style="margin:0">
+          <b>🧗 ¿Y el Paso de Mahoma?</b>
+          Impone más de lo que es. Es una trepada corta y fácil con las manos, pero con caída a ambos lados. Se pasa despacio, sin colas de gente encima, y habiendo practicado trepadas sencillas antes (en Mágina y Cuerda Larga las hay). Quien no lo vea claro ese día se queda en el collado de Coronas a 10 minutos de la cima — y también habrá hecho cumbre en su progresión.
+        </div>
+      </div>
+    </div>
+
+    <div class="callout green" style="margin-top:1.5rem">
+      <b>🏁 Checklist de la semana previa</b>
+      Meteo AEMET diaria desde el lunes · confirmar reserva de refugio · repasar y probar TODO el material (nada estrena nada) · uñas de los pies cortadas (en serio) · coches y horarios cerrados · aviso a familias con el plan · y a dormir mucho. Nos vemos en la cima. 🍊⛰️
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p><b>Operación Aneto</b> · plan del grupo de Jaén–Madrid · hecho con muchas ganas de montaña</p>
+  <p style="margin-top:.4rem">Esta guía es orientativa y no sustituye la formación con profesionales ni el juicio propio en montaña. Fedérate, fórmate y sé prudente.</p>
+</footer>
+
+<script>
+  // ---------- Checklist de material (el HTML es estático; el JS solo añade persistencia) ----------
+  // localStorage puede estar bloqueado en visores embebidos/sandbox: todo va protegido con try/catch.
+  var KEY = "aneto-checklist-v1";
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { saved = {}; }
+  function persist() {
+    try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+  }
+
+  var items = document.querySelectorAll(".check-item");
+
+  function updateProgress() {
+    var done = 0;
+    items.forEach(function (label) {
+      if (label.querySelector("input").checked) done++;
+    });
+    document.getElementById("prog-txt").textContent = done + " / " + items.length + " conseguidos";
+    document.getElementById("prog-bar").style.width = (done / items.length * 100) + "%";
+  }
+
+  items.forEach(function (label) {
+    var id = label.getAttribute("data-id");
+    var input = label.querySelector("input");
+    if (saved[id]) {
+      input.checked = true;
+      label.classList.add("done");
+    }
+    input.addEventListener("change", function () {
+      if (input.checked) saved[id] = true; else delete saved[id];
+      label.classList.toggle("done", input.checked);
+      persist();
+      updateProgress();
+    });
+  });
+  updateProgress();
+
+  // ---------- Menú superior: scroll por JS (la navegación por #ancla puede estar
+  // bloqueada en iframes sandbox; scrollIntoView funciona siempre) ----------
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      var target = document.querySelector(a.getAttribute("href"));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ block: "start" });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
