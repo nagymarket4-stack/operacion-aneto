@@ -149,6 +149,8 @@
   .check-item.done .ci-name{text-decoration:line-through}
   .ci-name{font-weight:600;font-size:.93rem}
   .ci-note{color:var(--muted);font-size:.82rem}
+  .ci-link{display:inline-block;margin-top:.3rem;font-size:.8rem;color:var(--blue);font-weight:600}
+  .ci-link:hover{color:var(--ink)}
   .progreso{
     background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
     padding:1rem 1.2rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;
@@ -198,7 +200,7 @@
     <div><b>3.404 m</b><small>altitud Aneto</small></div>
     <div><b>12</b><small>meses de plan</small></div>
     <div><b>~10</b><small>rutas de preparación</small></div>
-    <div><b>&lt;400 €</b><small>material desde cero</small></div>
+    <div><b>&lt;500 €</b><small>material desde cero</small></div>
   </div>
   <svg class="mountains" viewBox="0 0 1440 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
     <path d="M0 220 L180 90 L300 160 L460 40 L620 170 L760 20 L900 150 L1060 60 L1220 140 L1350 80 L1440 130 L1440 220 Z" fill="#1e293b"/>
@@ -362,7 +364,7 @@
   <section id="material">
     <div class="kicker">Equipo sin arruinarse</div>
     <h2>Material: del nivel 0 al Aneto</h2>
-    <p class="lead">Error clásico de novato: gastarse 800 € el primer mes. No. Se compra <b>por niveles, cuando la progresión lo pide</b>. Precios orientativos de gama básica (Decathlon o similar) — y lo técnico se puede <b>alquilar o comprar de segunda mano</b> (Wallapop está lleno de crampones usados dos veces). Marca lo que ya tengas: la lista se guarda en tu navegador.</p>
+    <p class="lead">Error clásico de novato: gastarse 800 € el primer mes. No. Se compra <b>por niveles, cuando la progresión lo pide</b>. Cada ítem lleva un <b>ejemplo concreto con precio real y enlace</b> (Decathlon, Amazon o Wallapop) — y lo técnico se puede <b>alquilar o comprar de segunda mano</b> (Wallapop está lleno de crampones usados dos veces). Marca lo que ya tengas: la lista se guarda en tu navegador. <em style="font-size:.88rem">Precios comprobados en julio de 2026; pueden bailar unos euros.</em></p>
 
     <div class="progreso">
       <span id="prog-txt">0 / 24 conseguidos</span>
@@ -373,20 +375,20 @@
     <div class="nivel">
       <div class="nivel-head">
         <h3>🟢 Nivel 0 · Para empezar YA (meses 1–3)</h3>
-        <span class="precio">~120–170 €</span>
+        <span class="precio">~150–200 €</span>
       </div>
       <div class="check-grid">
-        <label class="check-item" data-id="nivel0-0"><input type="checkbox"><span><span class="ci-name">Botas de trekking (caña media)</span><br><span class="ci-note">60–75 € · la compra más importante: probarlas por la tarde con calcetín de montaña</span></span></label>
-        <label class="check-item" data-id="nivel0-1"><input type="checkbox"><span><span class="ci-name">Mochila 20–30 L</span><br><span class="ci-note">20–35 € · con correa de pecho y cintura</span></span></label>
-        <label class="check-item" data-id="nivel0-2"><input type="checkbox"><span><span class="ci-name">Camiseta técnica (no algodón)</span><br><span class="ci-note">5–10 € · el algodón mojado enfría; valen las del running</span></span></label>
-        <label class="check-item" data-id="nivel0-3"><input type="checkbox"><span><span class="ci-name">Forro polar</span><br><span class="ci-note">10–15 € · segunda capa básica</span></span></label>
-        <label class="check-item" data-id="nivel0-4"><input type="checkbox"><span><span class="ci-name">Chubasquero / cortavientos</span><br><span class="ci-note">15–25 € · de momento vale uno sencillo</span></span></label>
-        <label class="check-item" data-id="nivel0-5"><input type="checkbox"><span><span class="ci-name">Pantalón de trekking o mallas</span><br><span class="ci-note">15–20 € · nada de vaqueros</span></span></label>
-        <label class="check-item" data-id="nivel0-6"><input type="checkbox"><span><span class="ci-name">Calcetines de senderismo (2 pares)</span><br><span class="ci-note">8–12 € · evitan ampollas más que ninguna crema</span></span></label>
+        <label class="check-item" data-id="nivel0-0"><input type="checkbox"><span><span class="ci-name">Botas de trekking (caña media)</span><br><span class="ci-note">la compra más importante: probarlas por la tarde con calcetín de montaña</span><br><a class="ci-link" href="https://www.decathlon.es/es/vc/quechua-mh500" target="_blank" rel="noopener">🛒 Quechua MH500 Mid · ~80 € · Decathlon</a></span></label>
+        <label class="check-item" data-id="nivel0-1"><input type="checkbox"><span><span class="ci-name">Mochila 20–30 L</span><br><span class="ci-note">con correa de pecho y cintura</span><br><a class="ci-link" href="https://www.decathlon.es/es/search?Ntt=mochila+senderismo+20+litros" target="_blank" rel="noopener">🛒 Quechua NH Arpenaz 20 L · ~25 € · Decathlon</a></span></label>
+        <label class="check-item" data-id="nivel0-2"><input type="checkbox"><span><span class="ci-name">Camiseta técnica (no algodón)</span><br><span class="ci-note">el algodón mojado enfría; valen las del running</span><br><a class="ci-link" href="https://www.decathlon.es/es/search?Ntt=camiseta+senderismo+MH100" target="_blank" rel="noopener">🛒 Quechua MH100 · ~6 € · Decathlon</a></span></label>
+        <label class="check-item" data-id="nivel0-3"><input type="checkbox"><span><span class="ci-name">Forro polar</span><br><span class="ci-note">segunda capa básica</span><br><a class="ci-link" href="https://www.decathlon.es/es/search?Ntt=forro+polar+senderismo+MH100" target="_blank" rel="noopener">🛒 Quechua MH100 polar · ~13 € · Decathlon</a></span></label>
+        <label class="check-item" data-id="nivel0-4"><input type="checkbox"><span><span class="ci-name">Chubasquero / cortavientos</span><br><span class="ci-note">de momento vale uno sencillo</span><br><a class="ci-link" href="https://www.decathlon.es/es/search?Ntt=chubasquero+raincut" target="_blank" rel="noopener">🛒 Quechua Raincut Zip · ~17 € · Decathlon</a></span></label>
+        <label class="check-item" data-id="nivel0-5"><input type="checkbox"><span><span class="ci-name">Pantalón de trekking o mallas</span><br><span class="ci-note">nada de vaqueros</span><br><a class="ci-link" href="https://www.decathlon.es/es/search?Ntt=pantalon+senderismo+MH100" target="_blank" rel="noopener">🛒 Quechua MH100 · ~20 € · Decathlon</a></span></label>
+        <label class="check-item" data-id="nivel0-6"><input type="checkbox"><span><span class="ci-name">Calcetines de senderismo (2 pares)</span><br><span class="ci-note">evitan ampollas más que ninguna crema</span><br><a class="ci-link" href="https://www.decathlon.es/es/search?Ntt=calcetines+senderismo+hike" target="_blank" rel="noopener">🛒 Quechua Hike 100 (pack 2) · ~10 € · Decathlon</a></span></label>
         <label class="check-item" data-id="nivel0-7"><input type="checkbox"><span><span class="ci-name">Gorra + gafas de sol + crema solar</span><br><span class="ci-note">ya lo tienes en casa casi seguro</span></span></label>
         <label class="check-item" data-id="nivel0-8"><input type="checkbox"><span><span class="ci-name">Agua 1,5–2 L + comida de ruta</span><br><span class="ci-note">botellas recicladas valen; frutos secos, fruta, bocadillo</span></span></label>
-        <label class="check-item" data-id="nivel0-9"><input type="checkbox"><span><span class="ci-name">Botiquín mini + manta térmica</span><br><span class="ci-note">10 € · tiritas, compeed, ibuprofeno, venda</span></span></label>
-        <label class="check-item" data-id="nivel0-10"><input type="checkbox"><span><span class="ci-name">Frontal (linterna de cabeza)</span><br><span class="ci-note">10–15 € · SIEMPRE en la mochila aunque sea ruta corta</span></span></label>
+        <label class="check-item" data-id="nivel0-9"><input type="checkbox"><span><span class="ci-name">Botiquín mini + manta térmica</span><br><span class="ci-note">tiritas, compeed, ibuprofeno, venda</span><br><a class="ci-link" href="https://www.amazon.es/s?k=botiquin+primeros+auxilios+senderismo" target="_blank" rel="noopener">🛒 botiquín compacto · ~12 € · Amazon</a></span></label>
+        <label class="check-item" data-id="nivel0-10"><input type="checkbox"><span><span class="ci-name">Frontal (linterna de cabeza)</span><br><span class="ci-note">SIEMPRE en la mochila aunque sea ruta corta</span><br><a class="ci-link" href="https://www.decathlon.es/es/search?Ntt=frontal+senderismo" target="_blank" rel="noopener">🛒 Forclaz HL100 · ~10 € · Decathlon</a> <a class="ci-link" href="https://www.amazon.es/s?k=petzl+tikkina" target="_blank" rel="noopener">· Petzl Tikkina · ~25 € · Amazon</a></span></label>
         <label class="check-item" data-id="nivel0-11"><input type="checkbox"><span><span class="ci-name">Móvil con Wikiloc + mapa offline</span><br><span class="ci-note">gratis · y batería externa pequeña</span></span></label>
       </div>
     </div>
@@ -394,30 +396,30 @@
     <div class="nivel">
       <div class="nivel-head">
         <h3>🔵 Nivel 1 · Media montaña y frío (meses 4–8)</h3>
-        <span class="precio">~130–200 €</span>
+        <span class="precio">~150–220 €</span>
       </div>
       <div class="check-grid">
-        <label class="check-item" data-id="nivel1-0"><input type="checkbox"><span><span class="ci-name">Chaqueta impermeable con membrana</span><br><span class="ci-note">40–70 € · tipo Quechua MH500; la capa 3 seria</span></span></label>
-        <label class="check-item" data-id="nivel1-1"><input type="checkbox"><span><span class="ci-name">Bastones de trekking (par)</span><br><span class="ci-note">20–35 € · salvan rodillas en bajadas largas; también de 2ª mano</span></span></label>
-        <label class="check-item" data-id="nivel1-2"><input type="checkbox"><span><span class="ci-name">Guantes finos + guantes de abrigo</span><br><span class="ci-note">15–25 € · sistema doble para invierno</span></span></label>
-        <label class="check-item" data-id="nivel1-3"><input type="checkbox"><span><span class="ci-name">Gorro y braga de cuello (buff)</span><br><span class="ci-note">8–12 €</span></span></label>
-        <label class="check-item" data-id="nivel1-4"><input type="checkbox"><span><span class="ci-name">Camiseta térmica (primera capa)</span><br><span class="ci-note">10–15 € · para salidas frías</span></span></label>
-        <label class="check-item" data-id="nivel1-5"><input type="checkbox"><span><span class="ci-name">Plumas o chaqueta acolchada ligera</span><br><span class="ci-note">30–50 € · para paradas y cimas; 2ª mano abunda</span></span></label>
-        <label class="check-item" data-id="nivel1-6"><input type="checkbox"><span><span class="ci-name">Polainas</span><br><span class="ci-note">10–15 € · para nieve y pedreras</span></span></label>
-        <label class="check-item" data-id="nivel1-7"><input type="checkbox"><span><span class="ci-name">Gafas de sol categoría 4</span><br><span class="ci-note">15–30 € · en nieve las cat. 3 se quedan cortas</span></span></label>
+        <label class="check-item" data-id="nivel1-0"><input type="checkbox"><span><span class="ci-name">Chaqueta impermeable con membrana</span><br><span class="ci-note">la capa 3 seria, para lluvia y viento de verdad</span><br><a class="ci-link" href="https://www.decathlon.es/es/search?Ntt=chaqueta+impermeable+montana+MH500" target="_blank" rel="noopener">🛒 Quechua MH500 · ~70 € · Decathlon</a></span></label>
+        <label class="check-item" data-id="nivel1-1"><input type="checkbox"><span><span class="ci-name">Bastones de trekking (par)</span><br><span class="ci-note">salvan rodillas en bajadas largas</span><br><a class="ci-link" href="https://www.decathlon.es/es/search?Ntt=bastones+senderismo+MT100" target="_blank" rel="noopener">🛒 Forclaz MT100 (par) · ~20 € · Decathlon</a> <a class="ci-link" href="https://es.wallapop.com/app/search?keywords=bastones%20trekking" target="_blank" rel="noopener">· 2ª mano en Wallapop</a></span></label>
+        <label class="check-item" data-id="nivel1-2"><input type="checkbox"><span><span class="ci-name">Guantes finos + guantes de abrigo</span><br><span class="ci-note">sistema doble para invierno</span><br><a class="ci-link" href="https://www.decathlon.es/es/search?Ntt=guantes+montana+trekking" target="_blank" rel="noopener">🛒 Quechua/Forclaz · 15–25 € el sistema · Decathlon</a></span></label>
+        <label class="check-item" data-id="nivel1-3"><input type="checkbox"><span><span class="ci-name">Gorro y braga de cuello (buff)</span><br><span class="ci-note">8–12 € en cualquier Decathlon o tienda deportiva</span></span></label>
+        <label class="check-item" data-id="nivel1-4"><input type="checkbox"><span><span class="ci-name">Camiseta térmica (primera capa)</span><br><span class="ci-note">para salidas frías</span><br><a class="ci-link" href="https://www.decathlon.es/es/search?Ntt=camiseta+termica+esqui+BL+100" target="_blank" rel="noopener">🛒 Wedze BL 100 · ~10 € · Decathlon</a></span></label>
+        <label class="check-item" data-id="nivel1-5"><input type="checkbox"><span><span class="ci-name">Plumas o chaqueta acolchada ligera</span><br><span class="ci-note">para paradas y cimas; 2ª mano abunda</span><br><a class="ci-link" href="https://www.decathlon.es/es/search?Ntt=chaqueta+acolchada+trekking+MT100" target="_blank" rel="noopener">🛒 Forclaz MT100 · ~45 € · Decathlon</a> <a class="ci-link" href="https://es.wallapop.com/app/search?keywords=plumifero%20montana" target="_blank" rel="noopener">· Wallapop</a></span></label>
+        <label class="check-item" data-id="nivel1-6"><input type="checkbox"><span><span class="ci-name">Polainas</span><br><span class="ci-note">para nieve y pedreras</span><br><a class="ci-link" href="https://www.decathlon.es/es/search?Ntt=polainas+trekking" target="_blank" rel="noopener">🛒 Forclaz MT500 · ~15 € · Decathlon</a></span></label>
+        <label class="check-item" data-id="nivel1-7"><input type="checkbox"><span><span class="ci-name">Gafas de sol categoría 4</span><br><span class="ci-note">en nieve las cat. 3 se quedan cortas</span><br><a class="ci-link" href="https://www.decathlon.es/es/search?Ntt=gafas+sol+categoria+4+montana" target="_blank" rel="noopener">🛒 Quechua MH570 cat. 4 · ~30 € · Decathlon</a></span></label>
       </div>
     </div>
 
     <div class="nivel">
       <div class="nivel-head">
         <h3>🟠 Nivel 2 · Alta montaña / Aneto (meses 7–12)</h3>
-        <span class="precio">~100–250 € (menos si alquilas)</span>
+        <span class="precio">~330 € nuevo · ~200 € alquilando crampones y piolet</span>
       </div>
       <div class="check-grid">
-        <label class="check-item" data-id="nivel2-0"><input type="checkbox"><span><span class="ci-name">Botas cramponables (semirrígidas)</span><br><span class="ci-note">90–150 € · imprescindibles para el glaciar; comprarlas en el mes 7 y domarlas</span></span></label>
-        <label class="check-item" data-id="nivel2-1"><input type="checkbox"><span><span class="ci-name">Crampones semiautomáticos</span><br><span class="ci-note">ALQUILER 10–15 €/día en Benasque · comprar (60–90 €) solo si repetiremos invernales</span></span></label>
-        <label class="check-item" data-id="nivel2-2"><input type="checkbox"><span><span class="ci-name">Piolet clásico</span><br><span class="ci-note">ALQUILER con los crampones · comprar 40–60 € · practicar autodetención en el curso</span></span></label>
-        <label class="check-item" data-id="nivel2-3"><input type="checkbox"><span><span class="ci-name">Casco de alpinismo</span><br><span class="ci-note">35–50 € · para el glaciar y el Paso de Mahoma; de 2ª mano NO (historial desconocido)</span></span></label>
+        <label class="check-item" data-id="nivel2-0"><input type="checkbox"><span><span class="ci-name">Botas cramponables (semirrígidas)</span><br><span class="ci-note">imprescindibles para el glaciar; comprarlas en el mes 7 y domarlas</span><br><a class="ci-link" href="https://www.decathlon.es/es/p/botas-de-alpinismo-y-alta-montana-adulto-simond-alpinism-azul/_/R-p-15633" target="_blank" rel="noopener">🛒 Simond Alpinism · ~170 € · Decathlon</a> <a class="ci-link" href="https://es.wallapop.com/app/search?keywords=botas%20alpinismo" target="_blank" rel="noopener">· ~100–125 € 2ª mano Wallapop</a></span></label>
+        <label class="check-item" data-id="nivel2-1"><input type="checkbox"><span><span class="ci-name">Crampones semiautomáticos</span><br><span class="ci-note">ALQUILER 10–15 €/día en Benasque · comprar solo si repetiremos invernales</span><br><a class="ci-link" href="https://www.decathlon.es/es/p/crampones-de-alpinismo-10-puntas-caiman-2-correas/_/R-p-9186" target="_blank" rel="noopener">🛒 Simond Caiman 2 · 75 € · Decathlon</a> <a class="ci-link" href="https://es.wallapop.com/app/search?keywords=crampones" target="_blank" rel="noopener">· Wallapop</a></span></label>
+        <label class="check-item" data-id="nivel2-2"><input type="checkbox"><span><span class="ci-name">Piolet clásico</span><br><span class="ci-note">ALQUILER con los crampones · practicar autodetención en el curso</span><br><a class="ci-link" href="https://www.decathlon.es/es/deportes/alpinismo/crampones-piolets-y-tornillos-de-hielo" target="_blank" rel="noopener">🛒 piolets Simond · 50–60 € · Decathlon</a> <a class="ci-link" href="https://es.wallapop.com/app/search?keywords=piolet" target="_blank" rel="noopener">· Wallapop</a></span></label>
+        <label class="check-item" data-id="nivel2-3"><input type="checkbox"><span><span class="ci-name">Casco de alpinismo</span><br><span class="ci-note">para el glaciar y el Paso de Mahoma; de 2ª mano NO (historial desconocido)</span><br><a class="ci-link" href="https://www.decathlon.es/es/p/casco-de-escalada-y-alpinismo-simond-rock/_/R-p-137025" target="_blank" rel="noopener">🛒 Simond Rock · ~27 € · Decathlon</a></span></label>
       </div>
     </div>
 
