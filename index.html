@@ -168,6 +168,39 @@
   .dia b{display:block;color:var(--accent2);font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem}
   .dia span{font-size:.86rem;color:var(--muted)}
 
+  /* ---------- EXTRAS OPCIONALES ---------- */
+  .extra-card h3{display:flex;align-items:center;gap:.4rem}
+  .extra-card ul{padding-left:1.1rem;color:var(--muted);font-size:.9rem;margin-top:.5rem}
+  .extra-card li{margin:.45rem 0}
+  .extra-card .p{color:var(--accent2);font-weight:700;white-space:nowrap}
+
+  /* ---------- BLOG ---------- */
+  .video-wrap{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:#000}
+  .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .video-cap{font-size:.85rem;color:var(--muted);margin-top:.5rem}
+  .quote{
+    border-left:4px solid var(--accent);background:var(--card);border-radius:0 var(--radius) var(--radius) 0;
+    padding:1.1rem 1.3rem;margin:1rem 0;font-size:1.05rem;font-style:italic;color:var(--ink);
+  }
+  .quote small{display:block;margin-top:.4rem;font-style:normal;color:var(--muted)}
+  .post{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem;margin-top:1rem}
+  .post .fecha{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--accent2)}
+  .post h3{margin:.3rem 0 .5rem}
+  .post p{color:var(--muted);font-size:.95rem}
+  .post p + p{margin-top:.6rem}
+
+  /* ---------- AVISO CACHIMBA ---------- */
+  .cachimba{
+    margin-top:3rem;padding:2rem 1.5rem;text-align:center;
+    border:3px dashed var(--accent);border-radius:var(--radius);
+    background:rgba(249,115,22,.07);transform:rotate(-1.5deg);
+  }
+  .cachimba b{
+    display:block;font-size:clamp(1.4rem,4.5vw,2.6rem);font-weight:900;
+    letter-spacing:.02em;color:var(--accent2);line-height:1.25;text-transform:uppercase;
+  }
+  .cachimba small{display:block;margin-top:.8rem;color:var(--muted);font-size:.9rem}
+
   footer{
     border-top:1px solid var(--line);text-align:center;color:var(--muted);
     padding:2.5rem 1rem;font-size:.88rem;
@@ -189,7 +222,9 @@
       <a href="#entreno">Entrenamiento</a>
       <a href="#rutas">Rutas</a>
       <a href="#material">Material</a>
+      <a href="#extras">Extras</a>
       <a href="#seguridad">Seguridad</a>
+      <a href="#blog">Blog</a>
       <a href="#eldia">El gran día</a>
     </div>
   </div>
@@ -473,6 +508,57 @@
     </div>
   </section>
 
+  <!-- ============ EXTRAS OPCIONALES ============ -->
+  <section id="extras">
+    <div class="kicker">La lista de los Reyes Magos</div>
+    <h2>Opcionales de alta montaña</h2>
+    <p class="lead"><b>Nada de esto hace falta para el Aneto.</b> Pero es el material que verás en mochilas ajenas y que, si el veneno de la montaña engancha (enganchará), acabará cayendo poco a poco. Perfecto para cumpleaños, sorteos del amigo invisible y caprichos post-nómina. Prioridad de compra: cero.</p>
+
+    <div class="grid2">
+      <div class="card extra-card">
+        <h3>📡 Tracking y electrónica</h3>
+        <ul>
+          <li><b>Reloj GPS con altímetro</b> (Garmin Instinct, Amazfit T-Rex) <span class="p">120–250 €</span> — track en la muñeca, pulso, y batería para días. El capricho más útil de la lista.</li>
+          <li><b>GPS de mano</b> (Garmin eTrex) <span class="p">~150 €</span> — botones que funcionan con guantes y pilas AA de repuesto; el móvil con frío se apaga, este no.</li>
+          <li><b>Baliza satelital</b> (Garmin inReach Mini) <span class="p">~350 € + suscripción</span> — botón SOS y mensajes donde no hay cobertura. Para expediciones serias.</li>
+          <li><b>Batería externa solar</b> <span class="p">~30 €</span> — para travesías de varios días.</li>
+          <li><b>Cámara de acción</b> (GoPro y compañía) <span class="p">200–400 €</span> — el vídeo de cumbre para presumir en el grupo de WhatsApp.</li>
+        </ul>
+      </div>
+      <div class="card extra-card">
+        <h3>🥾 Trekking y senderismo</h3>
+        <ul>
+          <li><b>Bolsa de hidratación 2 L</b> <span class="p">~15 €</span> — beber sin parar de andar: se bebe más y mejor.</li>
+          <li><b>Filtro de agua</b> (Sawyer, LifeStraw) <span class="p">30–40 €</span> — convierte cualquier arroyo en fuente; menos peso de agua a la espalda.</li>
+          <li><b>Silbato + brújula básica</b> <span class="p">5–10 €</span> — pesa nada y en un apuro vale oro.</li>
+          <li><b>Prismáticos compactos 8x25</b> <span class="p">~30 €</span> — para estudiar la ruta… y ver sarrios.</li>
+          <li><b>Toalla microfibra + sandalias de refugio</b> <span class="p">~20 €</span> — la gloria de descalzarse tras 10 horas de bota.</li>
+        </ul>
+      </div>
+      <div class="card extra-card">
+        <h3>🧗 Escalada</h3>
+        <ul>
+          <li><b>Set de vía ferrata</b> <span class="p">60–90 €</span> — las ferratas son la mejor escuela de terreno aéreo que existe: entrenamiento perfecto para el Paso de Mahoma.</li>
+          <li><b>Asegurador autobloqueante</b> (tipo GriGri) <span class="p">~90 €</span> — comodidad y un plus de seguridad asegurando en el rocódromo.</li>
+          <li><b>Magnesera + magnesio</b> <span class="p">~15 €</span> — si el rocódromo se convierte en costumbre.</li>
+          <li><b>Polea + maillon</b> <span class="p">20–30 €</span> — para practicar los polipastos de rescate del curso.</li>
+          <li><b>Friends y fisureros</b> <span class="p">juego 200 €+</span> — el material de autoprotección en roca: solo con formación y mejor prestado por el club.</li>
+        </ul>
+      </div>
+      <div class="card extra-card">
+        <h3>🏕️ Vivaqueo</h3>
+        <ul>
+          <li><b>Saco de dormir confort ~0 °C</b> <span class="p">80–150 €</span> — plumas comprime más, sintético perdona la humedad.</li>
+          <li><b>Esterilla inflable</b> <span class="p">30–60 €</span> — busca R-value 3 o más; el frío entra por el suelo, no por el aire.</li>
+          <li><b>Funda de vivac</b> <span class="p">40–90 €</span> — dormir bajo las estrellas a 2.500 m: la experiencia que más engancha de todas.</li>
+          <li><b>Hornillo de gas + cazo</b> <span class="p">25–40 €</span> — un café caliente viendo amanecer en la montaña no tiene precio.</li>
+          <li><b>Sábana de saco</b> <span class="p">15–20 €</span> — obligatoria en muchos refugios guardados; ligera y barata.</li>
+          <li><b>Tapones para los oídos</b> <span class="p">~2 €</span> — los ronquidos de un refugio lleno son legendarios. Compra dobles.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ SEGURIDAD ============ -->
   <section id="seguridad">
     <div class="kicker">Lo más importante</div>
@@ -521,6 +607,53 @@
     </div>
   </section>
 
+  <!-- ============ BLOG DE LA EXPEDICIÓN ============ -->
+  <section id="blog">
+    <div class="kicker">El cuaderno de la expedición</div>
+    <h2>Blog: por qué hacemos esto</h2>
+    <p class="lead">Porque dentro de veinte años nadie del grupo se va a acordar de un sábado más de sofá, pero nadie va a olvidar el amanecer desde el glaciar. Aquí van los vídeos que nos están metiendo el veneno en el cuerpo y unas cuantas palabras para los días en que dé pereza entrenar.</p>
+
+    <div class="grid3">
+      <div>
+        <div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/vNTVaiCDpBg" title="Aneto desde La Besurta - ruta clásica" loading="lazy" allowfullscreen></iframe></div>
+        <p class="video-cap">🎬 <b>La ruta entera que haremos</b>: La Besurta, los Portillones, el glaciar y el Paso de Mahoma. Míralo y dime que no te pica el gusanillo.</p>
+      </div>
+      <div>
+        <div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/QIOVxwslzoU" title="Subir al Aneto - ruta clásica por el Portillón superior" loading="lazy" allowfullscreen></iframe></div>
+        <p class="video-cap">🎬 <b>Otra visión de la clásica</b> por el Portillón Superior — fíjate en el ritmo tranquilo y en cómo va equipada la gente.</p>
+      </div>
+      <div>
+        <div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/FY69USNeOcE" title="Kilian Jornet en los Pirineos - 177 tresmiles en 8 días" loading="lazy" allowfullscreen></iframe></div>
+        <p class="video-cap">🎬 <b>Gasolina pura</b>: Kilian Jornet se hace 177 tresmiles del Pirineo en 8 días. Nosotros con uno vamos que ardemos.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:1.5rem">
+      <div class="quote">"Las montañas no son estadios donde satisfago mi ambición de triunfar: son las catedrales donde practico mi religión."<small>— Anatoli Bukréyev, alpinista</small></div>
+      <div class="quote">"Llegar a la cima es opcional. Volver es obligatorio."<small>— Ed Viesturs (y la norma número 1 de este grupo)</small></div>
+      <div class="quote">"No se puede estar siempre arriba, pero cuando se ha estado, se sabe para siempre lo que hay abajo."<small>— René Daumal, «El Monte Análogo»</small></div>
+    </div>
+
+    <div class="post">
+      <div class="fecha">Entrada 1 · El pacto</div>
+      <h3>De la barra del bar a los 3.404 metros</h3>
+      <p>Esto empezó como empiezan las mejores cosas: alguien dijo "¿y si subimos el Aneto?" y nadie tuvo el valor de decir que no. Somos de Jaén, del olivar y la cuesta, y resulta que eso es exactamente la materia prima de la que se hacen los montañeros: piernas curtidas y cabezonería.</p>
+      <p>El pacto es simple: un año de preparación, una ruta al mes todos juntos, cero postureo y cero imprudencias. El que menos corra marca el ritmo y el que más sepa enseña al resto. Y en julio, todos arriba. Todos.</p>
+    </div>
+    <div class="post">
+      <div class="fecha">Entrada 2 · Para los días flojos</div>
+      <h3>Lee esto cuando no te apetezca entrenar</h3>
+      <p>Hoy no quieres salir a andar. Lo sabemos. Pero el Aneto no negocia: los 10.150 metros de desnivel del plan se suben ahora, en las cuestas de Jaén un martes cualquiera, o no se suben nunca. Cada escalón con la mochila es un metro menos de glaciar que te va a pesar en julio.</p>
+      <p>Piensa en el momento exacto: el último paso del Paso de Mahoma, el abrazo arriba, Jaén entero ahí abajo a 500 kilómetros y nosotros en el techo del Pirineo. Eso se compra hoy. Ponte las botas.</p>
+    </div>
+    <div class="post">
+      <div class="fecha">Entrada 3 · La cuenta atrás</div>
+      <h3>Lo que de verdad estamos entrenando</h3>
+      <p>Que nadie se engañe: esto va de la montaña lo justo. Va de tener una excusa para vernos una vez al mes aunque la vida nos haya repartido entre Jaén y Madrid. Va de los bocadillos en la cima de La Pandera, de perderse (poco) en Mágina y de las agujetas compartidas por WhatsApp el lunes.</p>
+      <p>El Aneto es la meta, pero el premio es el camino — y el grupo. Nos vemos el sábado. 🍊⛰️</p>
+    </div>
+  </section>
+
   <!-- ============ EL GRAN DÍA ============ -->
   <section id="eldia">
     <div class="kicker">Mes 12</div>
@@ -561,6 +694,11 @@
     <div class="callout green" style="margin-top:1.5rem">
       <b>🏁 Checklist de la semana previa</b>
       Meteo AEMET diaria desde el lunes · confirmar reserva de refugio · repasar y probar TODO el material (nada estrena nada) · uñas de los pies cortadas (en serio) · coches y horarios cerrados · aviso a familias con el plan · y a dormir mucho. Nos vemos en la cima. 🍊⛰️
+    </div>
+
+    <div class="cachimba">
+      <b>( Rodri, no te puedes llevar la cachimba a este viaje )</b>
+      <small>Comunicado oficial e inapelable de la dirección técnica de la expedición. Sí, sabemos que "cabe en la mochila". No.</small>
     </div>
   </section>
 
